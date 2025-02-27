@@ -3,13 +3,13 @@ dotenv.config();
 const express = require('express') ; 
 const cors = require('cors') ; 
 const connecttodb= require('./db/db') ; 
-const userModel = require('./models/user.model');
+ 
 const cookieParser = require('cookie-parser') ;
 
 const app = express() ;
 
-userRoutes = require('./routes/user.routes') ; 
-
+const userRoutes = require('./routes/user.routes') ; 
+const captainRouter = require('./routes/captain.routes') ;  
 
 
 connecttodb() ; 
@@ -26,6 +26,7 @@ app.get('/' , (req , res ) =>{
 }) ; 
 
 app.use('/users' , userRoutes) ; 
+app.use('/captains' , captainRouter) ;
 
 
 
