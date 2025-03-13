@@ -10,7 +10,8 @@ const app = express() ;
 
 const userRoutes = require('./routes/user.routes') ; 
 const captainRouter = require('./routes/captain.routes') ;  
-const mapsRouter = require('./routes/maps.routes') ; 
+const mapsRouter = require('./routes/maps.routes') ;
+const rideRouter = require('./routes/ride.routes') ;   
 
 
 connecttodb() ; 
@@ -29,6 +30,7 @@ app.get('/' , (req , res ) =>{
 app.use('/users' , userRoutes) ; 
 app.use('/captains' , captainRouter) ;
 app.use('/maps' , mapsRouter) ;
+app.use('/rides' , rideRouter) ; 
 
 
 
